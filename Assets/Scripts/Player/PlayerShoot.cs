@@ -8,16 +8,24 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private Bullet _bullet;
     [SerializeField] private float _delay;
 
-    private float _time = 0;
-
-    private void Update()
+    private void OnEnable()
     {
-        _time += Time.deltaTime;
+        StartCoroutine(Shoot());
+    }
 
-        if (_delay < _time )
+    private void OnDisable()
+    {
+        StopCoroutine(Shoot());
+    }
+
+    private IEnumerator Shoot()
+    {
+        var deley = new WaitForSeconds(_delay);
+
+        while (true)
         {
             Instantiate(_bullet, _shootPoint.position, Quaternion.identity);
-            _time = 0;
+            yield return deley;
         }
     }
 }

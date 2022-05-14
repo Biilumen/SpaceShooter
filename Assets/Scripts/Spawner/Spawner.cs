@@ -54,6 +54,7 @@ public class Spawner : MonoBehaviour
         else
             _curentWave = _waves[index];
     }
+
     private void InstantiateEnemy()
     {
         Enemy enemy = Instantiate(_curentWave.Teamplate, _spawnPoint.position, _spawnPoint.rotation, _spawnPoint).GetComponent<Enemy>();
@@ -61,16 +62,19 @@ public class Spawner : MonoBehaviour
         enemy.Init(_target,_movePoint);
         enemy.Diyng += OnEnemyDying;
     }
+
     private void OnEnemyDying(Enemy enemy)
     {
         enemy.Diyng -= OnEnemyDying;
         _target.AddScore(enemy.Reward);
     }
+
     public void NextWave()
     {
         _spawned = 0;
         SetWave(++_curentWaveNumber);
     }
+
     public void ResetWaves()
     {
         _curentWaveNumber = -1;

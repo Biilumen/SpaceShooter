@@ -21,13 +21,14 @@ public class GameOverScreen : UIScreen
     {
         gameObject.SetActive(true);
     }
+
     public void OnRestartButtonClicked()
     {
         RestartButtonClicked?.Invoke();
     }
+
     public void OnExitButtonClicked()
     {
         ExitButtonClicked?.Invoke();
     }
-
 }

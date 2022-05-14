@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] FixedJoystick _joystick;
+    [SerializeField] private FixedJoystick _joystick;
 
     private Rigidbody2D _rigidbody2D;
     private Vector2 _direction = Vector2.zero;

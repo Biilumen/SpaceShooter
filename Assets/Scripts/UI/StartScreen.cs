@@ -21,10 +21,12 @@ public class StartScreen : UIScreen
     {
         gameObject.SetActive(true);
     }
+
     public void OnStartButtonClicked()
     {
         StartButtonClicked?.Invoke();
     }
+
     public void OnExitButtonClicked()
     {
         ExitButtonClicked?.Invoke();

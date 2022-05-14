@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         ScoreChange?.Invoke();
     }
 
-    public void ResetPlayer()
+    public void Restart()
     {
         _score = 0;
         ScoreChange?.Invoke();

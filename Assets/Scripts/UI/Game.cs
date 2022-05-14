@@ -6,9 +6,9 @@ public class Game : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private Spawner _spawner;
-    [SerializeField] StartScreen _startScreen;
-    [SerializeField] GameOverScreen _gameOverScreen;
-    [SerializeField] EndGameScreen _endGameScreen;
+    [SerializeField] private StartScreen _startScreen;
+    [SerializeField] private GameOverScreen _gameOverScreen;
+    [SerializeField] private EndGameScreen _endGameScreen;
 
     private void OnEnable()
     {
@@ -58,13 +58,13 @@ public class Game : MonoBehaviour
 
     private void StartGame()
     {
-        _player.ResetPlayer();
+        _player.Restart();
         Time.timeScale = 1;
     }
 
     private void RestartGame()
     {
-        _player.ResetPlayer();
+        _player.Restart();
         _spawner.ResetWaves();
         Time.timeScale = 1;
     }

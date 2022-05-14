@@ -13,6 +13,7 @@ public class PlayZoneHight : MonoBehaviour
     {
         SetSize();
     }
+
     private void SetSize()
     {
         float yScale = _camera.ScreenToWorldPoint(Screen.safeArea.max).y * _fullsize;

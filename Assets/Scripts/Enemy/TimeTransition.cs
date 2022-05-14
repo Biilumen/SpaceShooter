@@ -6,7 +6,7 @@ public class TimeTransition : Transition
 {
     [SerializeField] private WaitState _waitState;
 
-    void Update()
+    private void Update()
     {
         if (_waitState.PastTime > _waitState.WaitTime)
             NeedTransit = true;
